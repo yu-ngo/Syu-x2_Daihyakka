@@ -1,24 +1,39 @@
-# README
+# しゅうしゅう大百科
+<!--ここにアプリ名を入力-->
+​
+## サイト概要
+### サイトテーマ
+<!--何を『目的』とし、どのような『分類』なのかを簡潔に書く-->
+好きな言葉を共有して日本語の知見を深めるサイト
+​
+### テーマを選んだ理由
+<!--なぜこのようなテーマにしたかを説明する-->
+小論文或いは日常会話にて適正な言い回しや言葉遣いを瞬時に言語化できない時が多々あります。
+身近にもそういった悩みをもつ人は少なからずいました。
+そこで、言葉を知る機会があれば素敵だと思い、このテーマにしました。
+また、特定の言葉を知るだけでなく、まだ知らない新しい言葉を発見するきっかけとなれば幸いだと感じます。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### ターゲットユーザ
+<!--誰に使ってもらうかを具体的に記載する-->
+- 日本語の知見を深めたい人。
+- 適当な言葉の言語化に悩んでいる人。
+​
+### 主な利用シーン
+<!--どのような時に使うのかの状況を記載すること-->
+- 自分が好きな言葉を投稿する時。
+- 知りたい言葉を検索する時。
+- ただ無作為に言葉の知見を深めたい時。
+​
+## 設計書
+<!--テーマを設定・提出する時点では不要です-->
 
-Things you may want to cover:
+<!--↓実装機能リストURL-->
+<!--https://docs.google.com/spreadsheets/d/1lwJkQdNDXVHInNOH2GU8W6Oe3QA8uoOOCAwKlQgUHVo/edit?usp=sharing-->
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+​
