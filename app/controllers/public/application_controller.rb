@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     about_path
   end
-  #上記はサインアウト後の遷移先を
+  #上記はサインアウト後の遷移先を示す。
   
   protected
   
