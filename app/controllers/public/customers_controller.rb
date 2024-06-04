@@ -4,5 +4,9 @@ class Public::CustomersController < ApplicationController
   end
 
   def edit
+    @customers=Customers.find(params[:id])
+    if @customers.id !=current_user.id
+      redirect_to user_posts_path(current_user.id)
+    end
   end
 end

@@ -1,18 +1,11 @@
 class Public::UserPostsController < ApplicationController
   def index
-    #自分の投稿一覧及びマイ情報
-    @posts=Post.all
+    @user_posts=User_post.all
   end
 
   def show
   end
-  
-  def edit
-    @user=User.find(params[:id])
-    if @user.id !=current_user.id
-      redirect_to user_posts_path(current_user.id)
-    end
-  end
+
   
   def update
     @user=User.find(params[:id])
