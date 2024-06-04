@@ -1,0 +1,9 @@
+<!--自身の名前や投稿の一覧が表示されます。-->
+
+
+<!--以下は投稿の一覧-->
+<%= @posts_my.each do |post| %>
+  <%= post.title %>
+  <%= post.read %>
+  <%= post.meaning %>
+<% end %>
