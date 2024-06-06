@@ -23,6 +23,11 @@ class Public::PostsController < ApplicationController
       redirect_to customers_path
     end
   end
+  
+  def update
+    post=Post.find(params[:id])
+    post.update(post_params)
+    redirect_to 
 
 　#投稿データの保存
 　def create

@@ -1,1 +1,6 @@
 <!--自身の名前や自己紹介文を編集します。-->
+<%= form_with model: @name_my do |f| %>
+ <%= f.text_field :name %>
+ <%= f.text_field :introduction %>
+ <%= f.submit "変更" %>
+<% end %>
