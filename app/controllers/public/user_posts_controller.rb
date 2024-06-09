@@ -1,6 +1,6 @@
 class Public::UserPostsController < ApplicationController
   def index
-    @user_posts=User_post.all
+    @user_posts=User.all
   end
 
   def show
