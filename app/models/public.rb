@@ -8,6 +8,11 @@ class Public < ApplicationRecord
          #recoverableはパスワードをリセット
          #rememberableはログイン情報を保存
          #validatableはemailのフォーマットなどのバリデーション
+  has_many :post, dependent: :destroy
   has_one_attached :image
   #画像を使えるようにする記述(このモデルに使用宣言する)
+
+  validates :name, presence: true, length: { in: 1..20 }, uniqueness: true
+  validates :introduction, length: { maximum: 100 }
+
 end

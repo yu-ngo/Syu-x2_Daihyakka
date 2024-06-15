@@ -10,14 +10,17 @@ Rails.application.routes.draw do
   }
   
   namespace:public do
-    resources :customers, only: [:index, :edit]
+    resources :customers, only: [:index, :edit, :update, :create]
     get 'searches/index'
-    resources :posts, only: [:edit, :index, :new, :show, :update, :create]
-    resources :user_posts, only: [:index, :show] 
+    resources :posts, only: [:edit, :index, :new, :show, :update, :create, :destory]
+    resources :user_posts, only: [:index, :show, :create] 
   end
 
   
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+  
   #以下はゲストログイン
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'

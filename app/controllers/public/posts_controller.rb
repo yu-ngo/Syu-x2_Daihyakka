@@ -5,9 +5,15 @@ class Public::PostsController < ApplicationController
 
   #投稿データの保存
   def create
-    post=Post.new(post_params)
-    post.save
-    redirect_to public_posts_path
+    @post=Post.new(post_params)
+    @post.user_id=current_user.id
+    if @post.save
+      flash[:notice]="更新が完了しました☆"
+      redirect_to public_posts_path(@post)
+    else
+      @user_posts=User.all
+      render :index
+    end
   end
 
   def show
@@ -16,6 +22,7 @@ class Public::PostsController < ApplicationController
 
   def index
     @user_posts=User.all
+    @post=Post.find(paramas[:id])
   end
 
   def edit
@@ -37,8 +44,9 @@ class Public::PostsController < ApplicationController
     redirect_to public_customers_path
   end
 
+
   private
-  def post_params
-    params.require(:post).permit(:title, :read, :meaning, :image)
+  def public_params
+   params.require(:public).permit(:name, :introduction)
   end
 end
