@@ -1,15 +1,15 @@
 class Public::PostsController < ApplicationController
   def new
-    @post=Post.new
+    @post_new=Post.new
   end
 
   #投稿データの保存
   def create
-    @post=Post.new(post_params)
-    @post.user_id=current_user.id
-    if @post.save
+    @post_new=Post.new(post_new_params)#50行目のpost_paramsとリンク
+    @post_new.user_id=current_user.id
+    if @post_new.save
       flash[:notice]="更新が完了しました☆"
-      redirect_to public_posts_path(@post)
+      redirect_to public_posts_path(@post_new.id)
     else
       @user_posts=User.all
       render :index
@@ -22,7 +22,7 @@ class Public::PostsController < ApplicationController
 
   def index
     @user_posts=User.all
-    @post=Post.find(paramas[:id])
+    # @post=Post.find(params[:id])
   end
 
   def edit
@@ -46,7 +46,9 @@ class Public::PostsController < ApplicationController
 
 
   private
-  def public_params
-   params.require(:public).permit(:name, :introduction)
+
+  def post_new_params
+   params.require(:post).permit(:title, :read, :meaning)
+  # require:送られてきたデータの中からモデル名を指定し、データんを絞り込む。　permit:requireで絞り込んだデータの中から、保存を許可するカラムを指定します。
   end
 end
