@@ -1,10 +1,12 @@
-<!--自身の名前や投稿の一覧が表示されます。-->
-<%= @name_my.name %>
-<%= @name_my.introduction 
 
+<!--自身の名前や投稿の一覧が表示されます。-->
+<%= current_public.name %>
+<%= current_public.introduction %>
+
+<h1>投稿一覧</h1>
 <!--以下は投稿の一覧-->
 <%= @posts_my.each do |post| %>
-  <%= post.title %>
-  <%= post.read %>
-  <%= post.meaning %>
+  題名:<%= post.title %>
+  読み方:<%= post.read %>
+  意味:<%= post.meaning %>
 <% end %>
