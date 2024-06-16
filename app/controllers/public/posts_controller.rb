@@ -6,7 +6,7 @@ class Public::PostsController < ApplicationController
   #投稿データの保存
   def create
     @post_new=Post.new(post_new_params)#50行目のpost_paramsとリンク
-    @post_new.user_id=current_user.id
+    @post_new.user_id=current_public.id
     if @post_new.save
       flash[:notice]="更新が完了しました☆"
       redirect_to public_posts_path(@post_new.id)
