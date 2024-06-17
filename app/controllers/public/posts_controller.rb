@@ -11,7 +11,7 @@ class Public::PostsController < ApplicationController
       flash[:notice]="更新が完了しました☆"
       redirect_to public_posts_path(@post_new.id)
     else
-      @user_posts=User.all
+      @posts_my=Post.all
       render :index
     end
   end

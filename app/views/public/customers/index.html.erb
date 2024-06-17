@@ -2,11 +2,22 @@
 <!--自身の名前や投稿の一覧が表示されます。-->
 <%= current_public.name %>
 <%= current_public.introduction %>
+<%#= link_to "編集", edit_public_customer_path %>
 
 <h1>投稿一覧</h1>
 <!--以下は投稿の一覧-->
-<%= @posts_my.each do |post| %>
-  題名:<%= post.title %>
-  読み方:<%= post.read %>
-  意味:<%= post.meaning %>
+<% @posts_my.each do |posts| %>
+ <table>
+   <tr>
+     <th><%= posts.title %></th>
+   </tr> 
+   <tr>
+     <th>読み方</th>
+     <th><%= posts.read %></th>
+   </tr>
+   <tr>
+     <th>意味</th>
+     <th><%= posts.meaning %></th>
+   </tr>
+ </table>
 <% end %>
