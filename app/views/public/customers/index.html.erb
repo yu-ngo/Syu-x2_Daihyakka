@@ -1,23 +1,28 @@
 
 <!--自身の名前や投稿の一覧が表示されます。-->
-<%= current_public.name %>
-<%= current_public.introduction %>
-<%#= link_to "編集", edit_public_customer_path %>
+ <%= current_public.name %>
+ <%= current_public.introduction %>
+<%#= link_to "編集", edit_public_customer_path(@profile_my.id) %>
 
 <h1>投稿一覧</h1>
 <!--以下は投稿の一覧-->
-<% @posts_my.each do |posts| %>
- <table>
-   <tr>
-     <th><%= posts.title %></th>
-   </tr> 
-   <tr>
-     <th>読み方</th>
-     <th><%= posts.read %></th>
-   </tr>
-   <tr>
-     <th>意味</th>
-     <th><%= posts.meaning %></th>
-   </tr>
- </table>
-<% end %>
+ <% @posts_my.each do |posts| %>
+  <table>
+    <tr>
+     <th>
+      <h1>
+       <%= posts.title %>
+      </h1>
+     </th>
+    </tr>
+    <tr>
+      <th>読み方</th>
+      <th><%= posts.read %></th>
+    </tr>
+    <tr>
+      <th>意味</th>
+      <th><%= posts.meaning %></th>
+    </tr>
+    <tr><%= link_to "編集", edit_public_post_path(@post.id)  %></tr>
+  </table>
+ <% end %>

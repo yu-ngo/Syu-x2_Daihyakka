@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2024_06_09_115939) do
     t.string "meaning"
     t.integer "number_likes"
     t.integer "comment_likes"
-    t.integer "user_id"
+    t.integer "public_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
