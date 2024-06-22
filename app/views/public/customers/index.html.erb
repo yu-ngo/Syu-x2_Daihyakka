@@ -23,6 +23,6 @@
       <th>意味</th>
       <th><%= posts.meaning %></th>
     </tr>
-    <tr><%= link_to "編集", edit_public_post_path(@post.id)  %></tr>
+    <tr><%= link_to "編集", edit_public_post_path(posts.id), style: "color:black;", class: "link" %></tr>
   </table>
  <% end %>

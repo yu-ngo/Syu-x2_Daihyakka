@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
   
-  namespace:public do
+  namespace :public do
     resources :customers, only: [:index, :edit, :update, :create]
     get 'searches/index'
     resources :posts, only: [:edit, :index, :new, :show, :update, :create, :destory]

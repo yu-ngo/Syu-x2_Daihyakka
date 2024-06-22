@@ -27,6 +27,7 @@ class Public::PostsController < ApplicationController
 
   def edit
     @post=Post.find(params[:id])
+    binding.pry
     if @post.user.id !=current_user.id
       redirect_to public_customers_path
     end

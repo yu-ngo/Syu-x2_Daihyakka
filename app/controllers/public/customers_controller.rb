@@ -1,6 +1,5 @@
 class Public::CustomersController < ApplicationController
   def index
-   @post=Post.find(params[:id])
    @posts_my=Post.all
   end
 
@@ -15,6 +14,7 @@ class Public::CustomersController < ApplicationController
   end
 
   def edit
+   @post=Post.find(params[:id])
    @profile_my=Profile.find(params[:id])
    if @profile_my.id!=current_public.id
     redirect_to public_customers_path(current_public.id)
