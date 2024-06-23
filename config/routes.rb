@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   namespace :public do
     resources :customers, only: [:index, :edit, :update, :create]
     get 'searches/index'
-    resources :posts, only: [:edit, :index, :new, :show, :update, :create, :destory]
+    resources :posts, only: [:edit, :index, :new, :show, :update, :create, :destroy]
     resources :user_posts, only: [:index, :show, :create] 
   end
 

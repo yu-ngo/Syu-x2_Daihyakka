@@ -1,7 +1,9 @@
 
 <!--自身の名前や投稿の一覧が表示されます。-->
+<%= link_to edit_public_customer_path(current_public) do %>
  <%= current_public.name %>
  <%= current_public.introduction %>
+<% end %>
 <%#= link_to "編集", edit_public_customer_path(@profile_my.id) %>
 
 <h1>投稿一覧</h1>
@@ -23,6 +25,6 @@
       <th>意味</th>
       <th><%= posts.meaning %></th>
     </tr>
-    <tr><%= link_to "編集", edit_public_post_path(posts.id), style: "color:black;", class: "link" %></tr>
+    <tr><%= link_to "詳細", public_post_path(posts.id), style: "color:black;", class: "link" %></tr>
   </table>
  <% end %>

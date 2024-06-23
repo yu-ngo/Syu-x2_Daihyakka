@@ -4,28 +4,27 @@ class Public::CustomersController < ApplicationController
   end
 
   def create
-   @profile_my=Profile.new(user_params)
-   if @profile_my.save
+   profile_my=Public.new(user_params)
+   if profile_my.save
     flash[:notice]="ようこそ！サインアップに成功しました!"
-    redirect_to public_posts_path(@profile_my.id)
+    redirect_to public_posts_path(profile_my.id)
    else
     render :index
    end
   end
 
   def edit
-   @post=Post.find(params[:id])
-   @profile_my=Profile.find(params[:id])
-   if @profile_my.id!=current_public.id
+   @profile_my=Public.find(params[:id])
+   if @profile_my.id != current_public.id
     redirect_to public_customers_path(current_public.id)
    end
   end
 
   def update
-   @profile_my=Profile.find(params[:id])
-   if @profile_my.update(user_params)
+   profile_my=Public.find(params[:id])
+   if profile_my.update(user_params)
     flash[:notice]="更新されました"
-    redirect_to public_customers_path(@profile_my.id)
+    redirect_to public_customers_path(profile_my.id)
    else
     render:edit
    end

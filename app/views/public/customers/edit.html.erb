@@ -1,6 +1,14 @@
 <!--自身の名前や自己紹介文を編集します。-->
-<%= form_with model: @name_my do |f| %>
- <%= f.text_field :name %>
- <%= f.text_field :introduction %>
+<%= form_with model: @profile_my, url: public_customers_path do |f| %>
+<div>
+ <label>名前</label><br/>
+ <%= f.text_field :name, placeholder: "名前" %>
+</div>
+<div>
+ <label>自己紹介文</label><br/>
+ <%= f.text_field :introduction, placeholder: "自己紹介文" %>
+</div>
+<div>
  <%= f.submit "変更" %>
+</div>
 <% end %>
