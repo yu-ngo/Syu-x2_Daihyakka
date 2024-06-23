@@ -1,5 +1,5 @@
 <!--自身の名前や自己紹介文を編集します。-->
-<%= form_with model: @profile_my, url: public_customers_path do |f| %>
+<%= form_with model: @profile_my, url: public_customer_path(@profile_my.id) do |f| %>
 <div>
  <label>名前</label><br/>
  <%= f.text_field :name, placeholder: "名前" %>

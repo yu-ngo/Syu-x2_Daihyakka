@@ -32,9 +32,9 @@ class Public::CustomersController < ApplicationController
 
   private
 
-  def post_params
-   params.permit(:name, :introduction)#.require(:public)
-  # require:送られてきたデータの中からモデル名を指定し、データんを絞り込む。　permit:requireで絞り込んだデータの中から、保存を許可するカラムを指定します。
+  def user_params
+   params.require(:public).permit(:name, :introduction)
+  # require:送られてきたデータの中からモデル名を指定し、データを絞り込む。　permit:requireで絞り込んだデータの中から、保存を許可するカラムを指定します。
   end
 
 end

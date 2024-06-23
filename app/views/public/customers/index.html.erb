@@ -1,7 +1,7 @@
 
 <!--自身の名前や投稿の一覧が表示されます。-->
-<%= link_to edit_public_customer_path(current_public) do %>
- <%= current_public.name %>
+<%= link_to edit_public_customer_path(current_public), style: "color:black;", class: "link" do %>
+ <%= current_public.name %><br/>
  <%= current_public.introduction %>
 <% end %>
 <%#= link_to "編集", edit_public_customer_path(@profile_my.id) %>
