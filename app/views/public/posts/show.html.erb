@@ -20,14 +20,14 @@
   <tr>
     <th>
       <% if current_public==@post.public %>
-       <%= link_to "編集する", edit_public_post_path(@post.id), style: "color:black;", class: "link" %>
+       <%= link_to "編集する", edit_public_post_path(@post.id), style: "color:#00DD00;", class: "link" %>
       <% end %>
     </th>
   </tr>
   <tr>
     <th>
       <% if @post.public == current_public %>
-       <%= link_to "削除", public_post_path(@post.id), style: "color:black;", class: "link", method: :delete, "data-confirm" => "本当に削除しますか？" %>
+       <%= link_to "削除", public_post_path(@post.id), style: "color:#DD0000;", class: "link", method: :delete, "data-confirm" => "本当に削除しますか？" %>
       <% end %>
     </th>
   </tr>

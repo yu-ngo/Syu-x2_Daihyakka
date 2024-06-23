@@ -17,21 +17,21 @@
       <!--ログイン済みならばtrueが、ログインしていなければfalseが返される。-->
       <!--ログイン済みの場合、<#% if user_signed_in? %>から<#% else %>間のコードが表示される。-->
       <!--ログインしていない場合、<#% else %>から<#% end %>間のコードが表示される。-->
-       <li>
+       <li style="list-style-type: none;">
          <%= link_to  public_posts_path do %>
           <%= image_tag 'Syu-x2_Daihyakka.jpg', size: "100x100" %>
          <% end %>
        </li>
-       <li>
-         <%= link_to "ログアウト", destroy_public_session_path, method: :delete %>
+       <li style="list-style-type: none;">
+         <%= link_to "ログアウト", destroy_public_session_path, method: :delete, style: "color:black;", class: "link" %>
        </li>
 
       <% else %>
-       <li>
-         <%= link_to "新規登録", new_public_registration_path %>
+       <li style="list-style-type: none;">
+         <%= link_to "新規登録", new_public_registration_path, style: "color:black;", class: "link" %>
        </li>
-       <li>
-         <%= link_to "ログイン", new_public_session_path %>
+       <li style="list-style-type: none;">
+         <%= link_to "ログイン", new_public_session_path, style: "color:black;", class: "link" %>
        </li>
      <% end %>
     </header>

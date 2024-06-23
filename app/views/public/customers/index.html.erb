@@ -1,8 +1,14 @@
 
 <!--自身の名前や投稿の一覧が表示されます。-->
 <%= link_to edit_public_customer_path(current_public), style: "color:black;", class: "link" do %>
- <%= current_public.name %><br/>
- <%= current_public.introduction %>
+ <label>お名前</label>
+ <div style="color:gray;">
+  <%= current_public.name %><br/>
+ </div>
+ <label>自己紹介</label>
+ <div style="color:gray;">
+  <%= current_public.introduction %>
+ </div>
 <% end %>
 <%#= link_to "編集", edit_public_customer_path(@profile_my.id) %>
 
@@ -25,6 +31,10 @@
       <th>意味</th>
       <th><%= posts.meaning %></th>
     </tr>
-    <tr><%= link_to "詳細", public_post_path(posts.id), style: "color:black;", class: "link" %></tr>
+    <tr>
+     <th>
+      <%= link_to "詳細", public_post_path(posts.id), style: "color:#0000DD;", class: "link" %>
+     </th>
+    </tr>
   </table>
  <% end %>
