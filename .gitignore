@@ -38,3 +38,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+/.env
+#情報がGitで管理されなくなり、GitHubに上がることもない
