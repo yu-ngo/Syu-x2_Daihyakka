@@ -53,6 +53,6 @@ if Rails.env.production?
     File.join(rails_root, 'log', 'puma-error.log'),
     true
   )
-  # デーモン
+  # デーモン:アプリケーションを起動するときに、バックグラウンドでアプリケーションサーバーを常時起動させておくために設定
   daemonize
 end
