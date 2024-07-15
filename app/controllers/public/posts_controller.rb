@@ -5,13 +5,13 @@ class Public::PostsController < ApplicationController
 
   #投稿データの保存
   def create
-    post_new=Post.new(post_params)#50行目のpost_paramsとリンク
-    post_new.public_id=current_public.id
-    if post_new.save!
-      flash[:notice]="更新が完了しました☆"
-      redirect_to public_posts_path(post_new.id)
+    @post_new=Post.new(post_params)#50行目のpost_paramsとリンク
+    @post_new.public_id=current_public.id
+    if @post_new.save
+      flash[:notice]="投稿に成功しました"
+      redirect_to public_posts_path(@post_new.id)
     else
-      posts_my=Post.all
+      @posts_my=Post.all
       render :index
     end
   end
@@ -55,5 +55,5 @@ class Public::PostsController < ApplicationController
    params.require(:post).permit(:title, :read, :meaning)
   # require:送られてきたデータの中からモデル名を指定し、データんを絞り込む。　permit:requireで絞り込んだデータの中から、保存を許可するカラムを指定します。
   end
-  
+
 end

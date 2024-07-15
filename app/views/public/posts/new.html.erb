@@ -1,6 +1,14 @@
-<!--ここでは自身が投稿を行います。-->
+<!--バリデーション-->
+<% if @post_new.errors.any? %>
+ <h3><%= @post_new.errors.count %>件のエラーが発生しました。</h3>
+  <ul>
+    <% @post_new.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-
+<!--投稿を行います。-->
 <h1>投稿</h1>
 <%= form_with model: @post_new, url: public_posts_path, method: :post do |f| %>
   <h4>題名</h4>
