@@ -1,28 +1,20 @@
 name: Rails CI/CD
-#name:ワークフローの名前を指定している。任意の名前を指定できる。
+
 on:
   push:
     branches: [main]
-#on:ワークフローをトリガーするgithubのイベントを指定する。（今回はmainのブランチにプッシュされた時という意味）
+
 jobs:
-#jobs:処理のひとかたまり（仮想環境単位）を宣言していると考える。ジョブは複数構成することが可能で、一つのワークフローに一つ以上のジョブが必要です。
   build:
-  #build:ジョブの名前であり、任意の名前が指定できる。
     runs-on: ubuntu-latest
-    #runs-on:処理を実行する環境を指定している。
     steps:
-    #steps:ジョブが行う処理の集合を宣言している。
-    - uses: actions/checkout@v3
-    #uses:アクションを選択する。アクションとは処理のまとまりとして昨日かされたものと考える。今回はgithubが提供するactions/checkout@v2というアクションを選択している。
+    - uses: actions/setup-node@v3
     - name: Deploy
-    #name:steps(処理の集合)の名前を指定している。任意の名前が指定できる。
       env:
-      #env:使用する環変数を指定できる。今回はgithubの画面から登録したsecretsを使用する記述をしている。
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         USER_NAME: ${{ secrets.USER_NAME }}
         HOST_NAME: ${{ secrets.HOST_NAME }}
       run: |
-      #run:コマンドを使用したい時に使用する。今回はgithub actionsの仮想環境内からデプロイする対象のec2サーバーに接続して、デプロイを行うまでをコマンドしている。
         echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
         ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST_NAME} 'cd Syu-x2_Daihyakka &&
         git pull origin main &&
