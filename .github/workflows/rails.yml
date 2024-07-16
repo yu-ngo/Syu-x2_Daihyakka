@@ -13,7 +13,7 @@ jobs:
     steps:
     #steps:ジョブが行う処理の集合を宣言している。
     - uses: actions/checkout@v2
-    #uses:アクションを選択する。アクションとは処理のまとまりとして昨日かされたものと考える。（今回はgithubが提供するactions/checkout@v2というアクションを選択している。
+    #uses:アクションを選択する。アクションとは処理のまとまりとして昨日かされたものと考える。今回はgithubが提供するactions/checkout@v2というアクションを選択している。
     - name: Deploy
     #name:steps(処理の集合)の名前を指定している。任意の名前が指定できる。
       env:
